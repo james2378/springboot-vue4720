@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TingchechangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TingchechangEntity" id="tingchechangMap">
+        <result property="chechangbianhao" column="chechangbianhao"/>
+        <result property="chechangmingcheng" column="chechangmingcheng"/>
+        <result property="chechangleixing" column="chechangleixing"/>
+        <result property="tupian" column="tupian"/>
+        <result property="cheweixiangqing" column="cheweixiangqing"/>
+        <result property="cheweishuliang" column="cheweishuliang"/>
+        <result property="cheweizhuangtai" column="cheweizhuangtai"/>
+        <result property="xiaoshijiage" column="xiaoshijiage"/>
+        <result property="baoyuejiage" column="baoyuejiage"/>
+        <result property="weizhi" column="weizhi"/>
+        <result property="zixundianhua" column="zixundianhua"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TingchechangVO" >
+		SELECT * FROM tingchechang  tingchechang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TingchechangVO" >
+		SELECT  tingchechang.* FROM tingchechang  tingchechang 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TingchechangView" >
+
+		SELECT  tingchechang.* FROM tingchechang  tingchechang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TingchechangView" >
+		SELECT * FROM tingchechang  tingchechang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
